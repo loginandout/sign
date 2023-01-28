@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up | By Code Info</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="signup-box">
+      <h1>Sign Up</h1>
+      <h4>It's free and only takes a minute</h4>
+      <form action="https://sheetdb.io/api/v1/ixgpehbuvdw8t" method="post" id="sheetdb-form">
+        <label>First Name</label>
+        <input type="text" placeholder="" name="data[first name]">
+        <label>Last Name</label>
+        <input type="text" placeholder=""  name="data[last name]"/>
+        <label>Email</label>
+        <input type="email" placeholder="" name="data[email]"/>
+        <label>Password</label>
+        <input type="password" placeholder="" name="data[password]"/>
+        <label>Confirm Password</label>
+        <input type="password" placeholder=""/>
+        <input type="submit" value="Sign"/>
+      <closeform></closeform></form>
+      <p>
+        By clicking the Sign Up button,you agree to our <br />
+        <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+      </p>
+    </div>
+    <p class="para-2">
+      Already have an account? <a href="index.html">Login here</a>
+    </p>
+                <script>
+            var form = document.getElementById("sheetdb-form");
+            form.addEventListener("submit", e=>{
+                e.preventDefault();
+                fetch(form.action, {
+                    method : "POST",
+                    body: new FormData(document.getElementById("sheetdb-form")),
+                }).then(
+                    response => response.json()
+                ).then((html) =>{
+                    window.open('index.html','_blank');
+                });
+            });
+            </script>
+  </body>
+</html>
